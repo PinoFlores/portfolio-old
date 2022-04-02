@@ -31,10 +31,8 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "core-js": "^3.21.1",
-    "raf": "^3.4.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "whatwg-fetch": "^3.6.2"
+    "portfolio-components": "1.0.0"
   }
 }

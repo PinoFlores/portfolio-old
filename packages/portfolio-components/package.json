@@ -2,10 +2,20 @@
   "name": "portfolio-components",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "module": "dist/del-form-controllers.esm.js",
   "scripts": {
-    "start": "webpack serve --port 3000",
-    "build": "NODE_ENV=production webpack"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests"
   },
   "repository": {
     "type": "git",
@@ -18,7 +28,14 @@
     "url": "https://github.com/PinoFlores/portfolio/issues"
   },
   "homepage": "https://github.com/PinoFlores/portfolio#readme",
+  "peerDependencies": {
+    "react": ">=16"
+  },
   "devDependencies": {
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "css-loader": "^6.7.1",
@@ -30,11 +47,5 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
-  "dependencies": {
-    "core-js": "^3.21.1",
-    "raf": "^3.4.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "whatwg-fetch": "^3.6.2"
-  }
+  "dependencies": {}
 }

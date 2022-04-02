@@ -1,12 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "core-js/features/array/flat-map";
-import "core-js/features/map";
-import "core-js/features/promise";
-import "core-js/features/set";
-import "raf/polyfill";
-import "whatwg-fetch";
+import React, { FC, HTMLAttributes, ReactChild } from "react";
 
-import "./index.css";
+export interface Props extends HTMLAttributes<HTMLDivElement> {
+  /** custom content, defaults to 'the snozzberries taste like snozzberries' */
+  children?: ReactChild;
+}
 
-ReactDOM.render(<h1>Hello React!</h1>, document.getElementById("app-root"));
+// Please do not use types off of a default export module or else Storybook Docs will suffer.
+// see: https://github.com/storybookjs/storybook/issues/9556
+/**
+ * A custom Thing component. Neat!
+ */
+export const Thing: FC<Props> = ({ children }) => {
+  return (
+    <div
+      style={{ padding: 20, border: `1px solid #979fa8`, borderRadius: "6px" }}
+    >
+      {children || `the snozzberries taste like snozzberries`}
+    </div>
+  );
+};
